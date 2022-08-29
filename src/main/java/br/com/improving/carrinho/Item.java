@@ -18,24 +18,37 @@ public class Item {
      * @param valorUnitario
      * @param quantidade
      */
-    public Item(Produto produto, BigDecimal valorUnitario, int quantidade) {
-    }
+	public Item(Produto produto, BigDecimal valorUnitario, int quantidade) {
+		this.produto = produto;
+		this.valorUnitario = valorUnitario;
+		this.quantidade = quantidade;
+	}
 
     /**
      * Retorna o produto.
      *
      * @return Produto
      */
-    public Produto getProduto() {
-    }
+	public Produto getProduto() {
+		return this.produto;
+	}
+
+	public void setProduto(Produto produto){
+		this.produto = produto;
+	}
 
     /**
      * Retorna o valor unitário do item.
      *
      * @return BigDecimal
      */
-    public BigDecimal getValorUnitario() {
-    }
+	public BigDecimal getValorUnitario() {
+		return this.valorUnitario;
+	}
+
+	public void setValorUnitario(BigDecimal valorUnitario){
+		this.valorUnitario = valorUnitario;
+	}
 
     /**
      * Retorna a quantidade dos item.
@@ -43,14 +56,20 @@ public class Item {
      * @return int
      */
     public int getQuantidade() {
+		return this.quantidade;
     }
+
+	public void setQuantidade(int quantidade){
+		this.quantidade = quantidade;
+	}
+
 
     /**
      * Retorna o valor total do item.
      *
      * @return BigDecimal
      */
-    public BigDecimal getValorTotal() {
-
-    }
+	public BigDecimal getValorTotal() {
+		return getValorUnitario().multiply(BigDecimal.valueOf(getQuantidade()));
+	}
 }
